@@ -11,6 +11,7 @@ from .resources.goalie import Goalie
 from .resources.goalies import Goalies
 from .resources.teams import Teams
 from .resources.team import Team
+from .resources.ping import Ping
 
 
 application = app = Flask(__name__)  # Used in production
@@ -27,6 +28,8 @@ api.add_resource(Goalie, '/api/v1/goalies/<int:id>')  # Individual goalie stats
 
 api.add_resource(Teams, '/api/v1/teams')  # List of teams and stats
 api.add_resource(Team, '/api/v1/teams/<int:id>')  # Individual team stats
+
+api.add_resource(Ping, '/api/v1/ping')  # Ping api to keep it warm
 
 
 ###

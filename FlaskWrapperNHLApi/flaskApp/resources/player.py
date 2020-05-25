@@ -77,4 +77,5 @@ class Player(Resource):
             playerStats = playerStats.set_index(['year_code', 'month'])
             ps = {level: playerStats.xs(level).to_dict('index') for level in playerStats.index.levels[0]}
 
+        e.dispose()
         return {'player_stats': ps}

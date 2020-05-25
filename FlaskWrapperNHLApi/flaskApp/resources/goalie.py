@@ -72,4 +72,5 @@ class Goalie(Resource):
             goalieStats = goalieStats.set_index(['year_code', 'month'])
             ps = {level: goalieStats.xs(level).to_dict('index') for level in goalieStats.index.levels[0]}
 
+        e.dispose()
         return {'goalie_stats': ps}

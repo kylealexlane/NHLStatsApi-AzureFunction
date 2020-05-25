@@ -65,4 +65,5 @@ class Goalies(Resource):
         else:
             ps = goalieStats.set_index(['id']).to_dict('index')
 
+        e.dispose()
         return {'goalie_stats': ps}

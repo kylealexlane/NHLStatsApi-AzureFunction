@@ -65,4 +65,5 @@ class Players(Resource):
         else:
             ps = playerStats.set_index(['id']).to_dict('index')
 
+        e.dispose()
         return {'player_stats': ps}
